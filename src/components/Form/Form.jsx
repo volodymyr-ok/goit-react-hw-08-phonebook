@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyledForm } from './Form.styled';
+import { StyledForm } from 'utils/theme';
 import contactsCheking from 'utils/contactsChecking';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
