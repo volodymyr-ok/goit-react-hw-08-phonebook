@@ -3,7 +3,7 @@ import { StyledUL } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
 import { useEffect } from 'react';
-import { fetchContactsThunk } from 'redux/contactsOperations';
+import { fetchContacts } from 'redux/contactsOperations';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -11,7 +11,7 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   useEffect(() => {

@@ -59,6 +59,24 @@ export const StyledForm = styled.form`
   }
 `;
 
+export const StyledBtn = styled.button`
+  border-radius: 5px;
+  border: 1px solid #b6baff;
+  padding: 5px 10px;
+  background-color: #b6baff;
+
+  color: #222327;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: inherit;
+  }
+`;
+
 // const theme = {
 //   form: {
 //     margin: '0 auto 35px',
