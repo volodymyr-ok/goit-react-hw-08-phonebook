@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { StyledLI } from './ContactItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsOperations';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const ContactItem = ({ id, name, number }) => {
       </p>
 
       <button type="button" onClick={() => dispatch(deleteContact(id))}>
-        Delete
+        <TiDeleteOutline size={22} />
       </button>
     </StyledLI>
   );

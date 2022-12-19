@@ -1,4 +1,4 @@
-import { StyledForm, StyledH2 } from 'utils/theme';
+import { StyledCenteredDiv, StyledForm, StyledH2 } from 'utils/theme';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/authOperations';
@@ -34,7 +34,7 @@ const RegisterView = () => {
   };
 
   return (
-    <>
+    <StyledCenteredDiv>
       <StyledH2>Create your account</StyledH2>
 
       <StyledForm onSubmit={handleSubmit}>
@@ -63,7 +63,7 @@ const RegisterView = () => {
         </label>
         <button type="sumbit">Register</button>
       </StyledForm>
-    </>
+    </StyledCenteredDiv>
   );
 };
 

@@ -16,10 +16,14 @@ export const StyledLI = styled.li`
   }
 
   button {
-    border-radius: 5px;
-    border: 1px solid #b6baff;
-    padding: 5px 10px;
-    background-color: #b6baff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 0 solid #b6baff;
+    /* padding: 5px 10px; */
+    padding: 0;
+    background-color: #cc4343;
     margin-top: 5px;
     margin-left: auto;
 
@@ -31,7 +35,8 @@ export const StyledLI = styled.li`
     &:hover,
     &:focus {
       background-color: transparent;
-      color: inherit;
+      color: #9b6e14;
+      outline: 1px solid #9b6e14;
     }
   }
 `;

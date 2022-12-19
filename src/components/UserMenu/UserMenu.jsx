@@ -3,6 +3,7 @@ import { logOut } from 'redux/authOperations';
 import { selectUserName } from 'redux/selectors';
 import { StyledBtn } from 'utils/theme';
 import { StyledUserMenuDiv } from './UserMenu.styled';
+import { MdLogout } from 'react-icons/md';
 
 export const UserMenu = () => {
   const userName = useSelector(selectUserName);
@@ -17,6 +18,9 @@ export const UserMenu = () => {
       <p>Welcome, {userName}</p>
       <StyledBtn type="button" onClick={handleLogOut}>
         LogOut
+        <span>
+          <MdLogout />
+        </span>
       </StyledBtn>
     </StyledUserMenuDiv>
   );

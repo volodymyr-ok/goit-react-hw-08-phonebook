@@ -1,4 +1,4 @@
-import { StyledForm, StyledH2 } from 'utils/theme';
+import { StyledCenteredDiv, StyledForm, StyledH2 } from 'utils/theme';
 import { useState } from 'react';
 import { logIn } from 'redux/authOperations';
 import { useDispatch } from 'react-redux';
@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <StyledCenteredDiv>
       <StyledH2>Sign in your account</StyledH2>
 
       <StyledForm onSubmit={handleSubmit}>
@@ -54,7 +54,7 @@ const Login = () => {
         </label>
         <button type="sumbit">Log in</button>
       </StyledForm>
-    </>
+    </StyledCenteredDiv>
   );
 };
 

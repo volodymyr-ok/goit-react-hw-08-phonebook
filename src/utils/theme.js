@@ -77,6 +77,14 @@ export const StyledBtn = styled.button`
   }
 `;
 
+export const StyledCenteredDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+`;
+
 // const theme = {
 //   form: {
 //     margin: '0 auto 35px',

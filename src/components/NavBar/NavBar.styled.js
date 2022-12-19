@@ -7,6 +7,11 @@ export const StyledUL = styled.ul`
   width: 320px;
 
   li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     a {
       font-size: 22px;
       color: white;
@@ -22,6 +27,15 @@ export const StyledUL = styled.ul`
       &:not(.active):hover,
       &:not(.active):focus {
         color: #b6baff;
+      }
+    }
+
+    span {
+      display: inline-flex;
+      justify-content: center;
+      padding: 0 5px;
+
+      svg {
       }
     }
   }

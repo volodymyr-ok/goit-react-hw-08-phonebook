@@ -10,4 +10,13 @@ export const StyledUserMenuDiv = styled.div`
   p {
     font-size: 22px;
   }
+
+  span {
+    margin-left: 5px;
+    /* display: inline-flex;
+    padding: 5px 0 0; */
+
+    svg {
+    }
+  }
 `;
