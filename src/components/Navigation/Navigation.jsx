@@ -4,6 +4,7 @@ import { selectIsLoggedIn } from 'redux/selectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { NavBar } from 'components/NavBar/NavBar';
 import { StlyledHeader } from './Navigation.styled';
+import { Suspense } from 'react';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -12,7 +13,9 @@ const Navigation = () => {
     <>
       <StlyledHeader>{isLoggedIn ? <UserMenu /> : <NavBar />}</StlyledHeader>
 
-      <Outlet />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

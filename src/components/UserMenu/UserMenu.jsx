@@ -18,9 +18,7 @@ export const UserMenu = () => {
       <p>Welcome, {userName}</p>
       <StyledBtn type="button" onClick={handleLogOut}>
         LogOut
-        <span>
-          <MdLogout />
-        </span>
+        <MdLogout />
       </StyledBtn>
     </StyledUserMenuDiv>
   );

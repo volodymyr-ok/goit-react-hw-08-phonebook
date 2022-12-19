@@ -8,17 +8,13 @@ export const NavBar = () => {
       <li>
         <NavLink to={'register'}>
           Register
-          <span>
-            <MdLogin />
-          </span>
+          <MdLogin />
         </NavLink>
       </li>
       <li>
         <NavLink to={'/'}>
-          Login{' '}
-          <span>
-            <MdLogin />
-          </span>
+          Login
+          <MdLogin />
         </NavLink>
       </li>
     </StyledUL>

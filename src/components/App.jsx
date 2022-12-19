@@ -1,17 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
-import Contacts from 'pages/Contacts/Contacts';
-import RegisterView from 'pages/RegisterView/RegisterView';
-import LoginView from 'pages/LoginView/LoginView';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/authOperations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-// import { lazy, Suspense } from 'react';
-// const Contacts = lazy(() => import('pages/Contacts/Contacts'));
-// const RegisterView = lazy(() => import('pages/RegisterView/RegisterView'));
-// const LoginView = lazy(() => import('pages/LoginView/LoginView'));
+import { lazy } from 'react';
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const RegisterView = lazy(() => import('pages/RegisterView/RegisterView'));
+const LoginView = lazy(() => import('pages/LoginView/LoginView'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +20,6 @@ export const App = () => {
   return (
     <>
       <Routes>
-        {/* <Suspense fallback={<p>Loading...</p>}> */}
         <Route path="/" element={<Navigation />}>
           <Route
             index
@@ -54,7 +50,6 @@ export const App = () => {
             <RestrictedRoute redirectTo="/contacts" component={<LoginView />} />
           }
         />
-        {/* </Suspense> */}
       </Routes>
     </>
   );

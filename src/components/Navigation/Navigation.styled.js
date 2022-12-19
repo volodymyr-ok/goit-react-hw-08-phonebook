@@ -9,7 +9,3 @@ export const StlyledHeader = styled.header`
 
   margin-bottom: 15px;
 `;
-
-// export const StlyedDiv = styled.div`
-//   padding: 15px;
-// `

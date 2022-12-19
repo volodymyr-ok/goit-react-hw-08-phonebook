@@ -23,7 +23,6 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('email', email, 'password', password);
     dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
