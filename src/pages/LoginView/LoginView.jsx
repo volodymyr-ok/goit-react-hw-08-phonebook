@@ -1,9 +1,10 @@
 import { StyledForm, StyledH2 } from 'utils/theme';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/authOperations';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -23,7 +24,7 @@ const Login = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log('email', email, 'password', password);
-    // dispatch(logIn({ email, password }));
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };

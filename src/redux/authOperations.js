@@ -6,14 +6,16 @@ const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `${token}`;
   },
-  unset(token) {},
+  unset() {
+    axios.defaults.headers.common.Authorization = '';
+  },
 };
 
 export const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
-    console.log('data', data);
     token.set(data.token);
+    console.log('data.token', data.token);
     return data;
   } catch (e) {
     return console.log(e.message);
@@ -23,8 +25,8 @@ export const register = createAsyncThunk('auth/register', async credentials => {
 export const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
-    console.log('data', data);
     token.set(data.token);
+    console.log('data.token', data.token);
     return data;
   } catch (e) {
     return console.log(e.message);
@@ -33,10 +35,30 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
 
 export const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    const res = await axios.post('/users/logout');
-    console.log('res', res);
-    // token.set(data.token);
+    await axios.post('/users/logout');
+    token.unset();
   } catch (e) {
     return console.log(e.message);
   }
 });
+
+export const fetchCurrentUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const tokenInState = thunkAPI.getState().auth.token;
+    console.log(thunkAPI.getState().auth);
+
+    if (!tokenInState) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(tokenInState);
+
+    try {
+      const { data } = await axios.get('/users/current');
+      return data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
