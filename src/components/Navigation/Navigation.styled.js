@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const StlyledHeader = styled.header`
-  /* display: flex;
+  display: flex;
   flex-direction: row;
-  justify-content: end; */
+  justify-content: center;
   background-color: #b6baff14;
   padding: 15px;
 

@@ -14,7 +14,7 @@ export const UserMenu = () => {
 
   return (
     <StyledUserMenuDiv>
-      <p>{userName}</p>
+      <p>Welcome, {userName}</p>
       <StyledBtn type="button" onClick={handleLogOut}>
         LogOut
       </StyledBtn>

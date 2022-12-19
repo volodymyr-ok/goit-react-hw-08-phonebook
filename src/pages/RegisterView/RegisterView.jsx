@@ -35,7 +35,7 @@ const RegisterView = () => {
 
   return (
     <>
-      <StyledH2>Register page</StyledH2>
+      <StyledH2>Create your account</StyledH2>
 
       <StyledForm onSubmit={handleSubmit}>
         <label>
@@ -61,7 +61,7 @@ const RegisterView = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="sumbit">Submit</button>
+        <button type="sumbit">Register</button>
       </StyledForm>
     </>
   );

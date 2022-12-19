@@ -5,17 +5,24 @@ export const StyledUL = styled.ul`
   flex-direction: column;
   align-items: end;
   gap: 5px;
+  width: 320px;
 
   li {
-    /* border: 1px solid black; */
     a {
-      /* font-size: 26px; */
-      color: #b6baff;
+      font-size: 22px;
+      color: white;
       font-family: inherit;
       text-decoration: none;
 
       &.active {
+        display: none;
+      }
+      &:not(.active) {
         color: white;
+      }
+      &:not(.active):hover,
+      &:not(.active):focus {
+        color: #b6baff;
       }
     }
   }

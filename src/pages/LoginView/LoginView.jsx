@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <>
-      <StyledH2>Login page</StyledH2>
+      <StyledH2>Sign in your account</StyledH2>
 
       <StyledForm onSubmit={handleSubmit}>
         <label>
@@ -52,7 +52,7 @@ const Login = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="sumbit">Submit</button>
+        <button type="sumbit">Log in</button>
       </StyledForm>
     </>
   );

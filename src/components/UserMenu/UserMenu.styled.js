@@ -4,9 +4,10 @@ export const StyledUserMenuDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 320px;
+  /* max-width: 320px; */
+  width: 320px;
 
   p {
-    font-size: 26px;
+    font-size: 22px;
   }
 `;
