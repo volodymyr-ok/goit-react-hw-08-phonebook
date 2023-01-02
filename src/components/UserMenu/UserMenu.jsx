@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/authOperations';
 import { selectUserName } from 'redux/selectors';
-import { StyledBtn } from 'utils/theme';
+import { StyledBtn } from 'utils/commonStyles';
 import { StyledUserMenuDiv } from './UserMenu.styled';
 import { MdLogout } from 'react-icons/md';
 

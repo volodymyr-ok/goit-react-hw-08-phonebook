@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contactsOperations';
+import { TbMoodEmpty } from 'react-icons/tb';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -25,9 +26,19 @@ export const ContactList = () => {
   return (
     <>
       <StyledUL>
-        {filteredContacts()?.map(({ id, name, number }) => {
+        {filteredContacts() ? (
+          filteredContacts()?.map(({ id, name, number }) => {
+            return <ContactItem key={id} id={id} name={name} number={number} />;
+          })
+        ) : (
+          <div className="empty-list">
+            <h3>There is no one here</h3>
+            <TbMoodEmpty size={100} />
+          </div>
+        )}
+        {/* {filteredContacts()?.map(({ id, name, number }) => {
           return <ContactItem key={id} id={id} name={name} number={number} />;
-        })}
+        })} */}
       </StyledUL>
     </>
   );

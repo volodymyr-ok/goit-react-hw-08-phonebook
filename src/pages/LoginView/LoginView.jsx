@@ -1,4 +1,4 @@
-import { StyledCenteredDiv, StyledForm, StyledH2 } from 'utils/theme';
+import { StyledCenteredDiv, StyledForm, StyledH2 } from 'utils/commonStyles';
 import { useState } from 'react';
 import { logIn } from 'redux/authOperations';
 import { useDispatch } from 'react-redux';
