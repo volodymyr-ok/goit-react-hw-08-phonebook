@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { colors } from 'utils/theme';
 
 export const StyledUL = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
 
   .empty-list {
     display: flex;
@@ -15,7 +17,7 @@ export const StyledUL = styled.ul`
     width: 100%;
     gap: 5px;
     padding: 15px 0;
-    color: #b6baff;
+    color: ${colors.mainColor};
     text-align: center;
     text-transform: uppercase;
   }

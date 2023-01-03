@@ -62,19 +62,6 @@ export const Form = () => {
 
   return (
     <StyledWrapper id="ctreator-form">
-      <button className="creator-btn" type="button" onClick={toggleCreator}>
-        {isCreatorOpened ? (
-          <>
-            <span>Hide creator</span>
-            <VscChromeMinimize />
-          </>
-        ) : (
-          <>
-            <span>Create contact</span>
-            <VscAdd />
-          </>
-        )}
-      </button>
       <div className="creator-wrap">
         <StyledForm onSubmit={handleSubmit} id="creator">
           <label>
@@ -108,6 +95,20 @@ export const Form = () => {
           </button>
         </StyledForm>
       </div>
+
+      <button className="creator-btn" type="button" onClick={toggleCreator}>
+        {isCreatorOpened ? (
+          <>
+            <span>Hide creator</span>
+            <VscChromeMinimize />
+          </>
+        ) : (
+          <>
+            <span>Create contact</span>
+            <VscAdd />
+          </>
+        )}
+      </button>
     </StyledWrapper>
   );
 };

@@ -3,8 +3,8 @@ import { colors } from 'utils/theme';
 
 export const StyledH2 = styled.h2`
   font-size: 38px;
-  margin-bottom: 15px;
-  color: ${colors.mainBlue};
+  margin-bottom: 25px;
+  color: ${colors.mainColor};
   text-align: center;
 `;
 
@@ -39,10 +39,11 @@ export const StyledForm = styled.form`
     input {
       margin-top: 3px;
       border-radius: 5px;
-      border: 1px solid #d3d5ff40;
-      min-width: 250px;
+      border: 1px solid ${colors.mainBorder};
+      width: 250px;
       height: 35px;
-      background-color: ${colors.mainBlue}14;
+
+      background-color: ${colors.darkTransparent};
       color: #7f86ff;
       text-align: center;
       font-family: inherit;
@@ -50,7 +51,7 @@ export const StyledForm = styled.form`
       padding: 5px 10px;
 
       &:focus {
-        background-color: #d3d5ff40;
+        background-color: ${colors.mainBorder};
         outline: none;
       }
     }
@@ -58,11 +59,11 @@ export const StyledForm = styled.form`
 
   button {
     border-radius: 5px;
-    border: 1px solid ${colors.mainBlue};
+    border: 1px solid ${colors.mainColor};
     padding: 5px 10px;
-    background-color: ${colors.mainBlue};
+    background-color: ${colors.mainColor};
 
-    color: #222327;
+    color: ${colors.btnText};
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
@@ -75,16 +76,23 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const StyledBtn = styled.button`
+export const Btn = styled.button`
   border-radius: 5px;
-  border: 1px solid ${colors.mainBlue};
+  border: 1px solid ${colors.mainColor};
   padding: 5px 10px;
-  background-color: ${colors.mainBlue};
+  background-color: ${colors.mainColor};
 
-  color: #222327;
+  color: ${colors.btnText};
+  font-size: 20px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  transition: all 250ms ease-in-out;
 
   &:hover,
   &:focus {

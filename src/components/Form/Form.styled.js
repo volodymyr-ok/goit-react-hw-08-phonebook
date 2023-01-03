@@ -2,41 +2,50 @@ import styled from 'styled-components';
 import { colors } from 'utils/theme';
 
 export const StyledWrapper = styled.div`
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+
+  box-shadow: 0px -1px 5px 0px ${colors.darkTransparent};
+  background-color: ${colors.modalBg};
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+
+  padding: 15px;
   margin: 0 auto;
-  width: auto;
-  max-width: 320px;
+  width: 100%;
+  min-height: 70px;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+
+  &.opened {
+    /* padding: 15px; */
+    gap: 15px;
+  }
 
   &.opend .creator-btn {
-    /* background-color: ${colors.darkTransparent};
-    color: ${colors.mainBlue}; */
-    background-color: ${colors.darkTransparent};
-    /* color: ${colors.mainBlue}; */
-    border: 1px solid ${colors.darkTransparent};
+    /* background-color: ${colors.modalBg};
+    border: 1px solid ${colors.modalBg}; */
   }
 
   .creator-btn {
-    /* margin-left: auto; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 5px;
 
-    /* height: 35px; */
     width: 250px;
     padding: 5px 10px;
     outline: none;
     border-radius: 5px;
 
-    /* border: 1px solid ${colors.mainBlue};
-    background-color: ${colors.mainBlue}; */
     border: 1px solid ${colors.mainBorder};
-    background-color: ${colors.darkTransparent};
-    color: white;
+    background-color: transparent;
+    color: ${colors.mainColor};
 
     font-size: 20px;
     font-weight: 500;
@@ -56,13 +65,14 @@ export const StyledWrapper = styled.div`
   }
 
   #creator {
-    transform: translateY(-110%);
-    transition-property: transform, margin;
+    transform: translateY(100%);
+    transition: all 250ms ease-in-out;
+    /* transition-property: transform, margin;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 
     &.opend {
-      margin-top: 15px;
+      margin-bottom: 15px;
       transform: translateY(0%);
     }
   }
