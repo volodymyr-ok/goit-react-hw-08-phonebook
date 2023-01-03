@@ -12,7 +12,7 @@ export const StyledLI = styled.li`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  gap: 5px;
+  gap: 10px;
   min-width: 250px;
 
   .fisrtLetters {
@@ -21,7 +21,7 @@ export const StyledLI = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 5px;
     border: 1px solid ${colors.mainBorder};
   }
   .contact-data {

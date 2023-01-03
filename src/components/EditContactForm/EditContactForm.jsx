@@ -1,7 +1,12 @@
+import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/selectors';
 import { Btn } from 'utils/commonStyles';
 import { Backdrop } from './EditContactForm.styled';
 
 export const EditContactFrom = () => {
+  const contacts = useSelector(getContacts);
+  console.log(contacts);
+
   const closeModal = e => {
     console.log(e.target);
     if (e.target !== e.currentTarget) {
@@ -11,9 +16,24 @@ export const EditContactFrom = () => {
     modal.classList.remove('opened');
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    // const inContactList = contacts.filter(contact =>
+    //   contactsCheking(contact, { name, number })
+    // ).length;
+
+    // if (!inContactList) {
+    //   toggleCreator();
+    //   dispatch(addContact({ name, number }));
+    // }
+
+    // reset();
+  };
+
   return (
     <Backdrop className="edit-contact-modal" onClick={closeModal}>
-      <form className="edit-contact-form">
+      <form className="edit-contact-form" onSubmit={handleSubmit}>
         <label htmlFor="name-changer">Name</label>
         <input
           type="text"

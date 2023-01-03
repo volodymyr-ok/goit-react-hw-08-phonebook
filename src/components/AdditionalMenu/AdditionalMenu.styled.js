@@ -3,7 +3,7 @@ import { colors } from 'utils/theme';
 
 export const Menu = styled.ul`
   position: absolute;
-  top: 47px;
+  bottom: 47px;
   right: 3px;
   z-index: 1;
 
@@ -11,13 +11,13 @@ export const Menu = styled.ul`
   flex-direction: column;
 
   padding: 0 5px;
-  transform: translate(0%, -20%);
+  transform: translate(0%, 20%);
   opacity: 0;
   pointer-events: none;
   transition: all 250ms ease-in-out;
 
   border-radius: 5px;
-  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   border: 1px solid ${colors.mainBorder};
   background-color: ${colors.modalBg};
 

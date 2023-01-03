@@ -8,18 +8,6 @@ export const StyledH2 = styled.h2`
   text-align: center;
 `;
 
-export const HoveredWord = styled.span`
-  cursor: default;
-  span {
-    color: inherit;
-    transition: all 0.1s ease-in-out;
-  }
-  span:hover {
-    color: ${colors.gold};
-    /* color: white; */
-  }
-`;
-
 export const StyledForm = styled.form`
   margin: 0 auto;
   max-width: 320px;

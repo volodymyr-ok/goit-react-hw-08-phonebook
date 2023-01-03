@@ -23,13 +23,7 @@ export const StyledWrapper = styled.div`
   align-items: center;
 
   &.opened {
-    /* padding: 15px; */
     gap: 15px;
-  }
-
-  &.opend .creator-btn {
-    /* background-color: ${colors.modalBg};
-    border: 1px solid ${colors.modalBg}; */
   }
 
   .creator-btn {
@@ -40,10 +34,6 @@ export const StyledWrapper = styled.div`
 
     height: 40px;
     width: 290px;
-    /* min-width: 290px;
-    width: 100%; */
-    /* width: 100%;
-    max-width: 320px; */
     padding: 5px 10px;
     outline: none;
     border-radius: 5px;
@@ -72,9 +62,6 @@ export const StyledWrapper = styled.div`
   #creator {
     transform: translateY(100%);
     transition: all 250ms ease-in-out;
-    /* transition-property: transform, margin;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 
     &.opend {
       margin-bottom: 15px;

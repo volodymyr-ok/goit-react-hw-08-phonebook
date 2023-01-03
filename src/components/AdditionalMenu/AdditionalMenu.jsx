@@ -22,9 +22,9 @@ export const AdditionalMenu = ({ id, name, number }) => {
 
   return (
     <Menu className="additional-menu" id={name}>
-      <li onClick={handleEditContact}>
-        <p>Edit</p>
-        <MdOutlineModeEditOutline className="editIcon" size={25} />
+      <li onClick={handleDeleteContact}>
+        <p>Delete</p>
+        <TiDeleteOutline className="deleteIcon" size={25} />
       </li>
 
       <li>
@@ -34,9 +34,9 @@ export const AdditionalMenu = ({ id, name, number }) => {
         </a>
       </li>
 
-      <li onClick={handleDeleteContact}>
-        <p>Delete</p>
-        <TiDeleteOutline className="deleteIcon" size={25} />
+      <li onClick={handleEditContact}>
+        <p>Edit</p>
+        <MdOutlineModeEditOutline className="editIcon" size={25} />
       </li>
     </Menu>
   );
