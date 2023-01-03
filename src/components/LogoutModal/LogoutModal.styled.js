@@ -7,15 +7,21 @@ export const Backdrop = styled.div`
   top: 0;
   left: 0;
 
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 250ms ease-in-out;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: ${colors.backdropBg};
   height: 100vh;
   width: 100vw;
+
   &.shown {
-    display: flex;
+    opacity: 1;
+    pointer-events: all;
   }
 `;
 
