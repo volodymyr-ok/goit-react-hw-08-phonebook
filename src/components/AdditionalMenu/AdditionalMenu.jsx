@@ -11,19 +11,12 @@ export const AdditionalMenu = ({ id, name, number }) => {
   // const [numberForChange, setNumberForChange] = useState('');
   // const [idForChange, setIdForChange] = useState('');
 
-  const closeMenu = () => {
-    const modals = document.querySelectorAll('.additional-menu');
-    modals.forEach(modal => modal.classList.remove('opened'));
-  };
-
   const handleEditContact = () => {
-    closeMenu();
     const modal = document.querySelector('.edit-contact-modal');
     modal.classList.add('opened');
   };
 
   const handleDeleteContact = () => {
-    closeMenu();
     dispatch(deleteContact(id));
   };
 
@@ -34,7 +27,7 @@ export const AdditionalMenu = ({ id, name, number }) => {
         <MdOutlineModeEditOutline className="editIcon" size={25} />
       </li>
 
-      <li onClick={closeMenu}>
+      <li>
         <a href={`tel:${number}`}>
           <p>Call</p>
           <MdOutlineCall className="callIcon" size={25} />

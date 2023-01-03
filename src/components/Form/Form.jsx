@@ -8,6 +8,7 @@ import { StyledWrapper } from './Form.styled';
 import { FiUserPlus } from 'react-icons/fi';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { HiOutlineMinusSm } from 'react-icons/hi';
+import closeMenu from 'utils/additionalMenuClosing';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ export const Form = () => {
   };
 
   return (
-    <StyledWrapper id="ctreator-form">
+    <StyledWrapper id="ctreator-form" onClick={closeMenu}>
       <div className="creator-wrap">
         <StyledForm onSubmit={handleSubmit} id="creator">
           <label>

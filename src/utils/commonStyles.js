@@ -3,7 +3,7 @@ import { colors } from 'utils/theme';
 
 export const StyledH2 = styled.h2`
   font-size: 38px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   color: ${colors.mainColor};
   text-align: center;
 `;
@@ -12,14 +12,11 @@ export const HoveredWord = styled.span`
   cursor: default;
   span {
     color: inherit;
-
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: 0.1s;
+    transition: all 0.1s ease-in-out;
   }
   span:hover {
     color: ${colors.gold};
-    color: white;
+    /* color: white; */
   }
 `;
 

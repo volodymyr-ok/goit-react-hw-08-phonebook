@@ -12,7 +12,7 @@ export const StyledWrapper = styled.div`
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 
-  padding: 15px;
+  padding: 15px 25px;
   margin: 0 auto;
   width: 100%;
   min-height: 70px;
@@ -39,7 +39,11 @@ export const StyledWrapper = styled.div`
     gap: 5px;
 
     height: 40px;
-    width: 250px;
+    width: 290px;
+    /* min-width: 290px;
+    width: 100%; */
+    /* width: 100%;
+    max-width: 320px; */
     padding: 5px 10px;
     outline: none;
     border-radius: 5px;

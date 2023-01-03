@@ -5,6 +5,7 @@ import { getContacts, getFilter } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contactsOperations';
 import { TbMoodEmpty } from 'react-icons/tb';
+import closeMenu from 'utils/additionalMenuClosing';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -25,7 +26,7 @@ export const ContactList = () => {
 
   return (
     <>
-      <StyledUL>
+      <StyledUL onClick={closeMenu}>
         {filteredContacts() ? (
           filteredContacts()?.map(({ id, name, number }) => {
             return <ContactItem key={id} id={id} name={name} number={number} />;
@@ -36,9 +37,6 @@ export const ContactList = () => {
             <TbMoodEmpty size={100} />
           </div>
         )}
-        {/* {filteredContacts()?.map(({ id, name, number }) => {
-          return <ContactItem key={id} id={id} name={name} number={number} />;
-        })} */}
       </StyledUL>
     </>
   );

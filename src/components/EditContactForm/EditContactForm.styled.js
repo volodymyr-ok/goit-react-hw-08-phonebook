@@ -17,11 +17,9 @@ export const Backdrop = styled.div`
 
   pointer-events: none;
   opacity: 0;
-  /* transform: scale(0); */
   transition: all 250ms ease-in-out;
 
   &.opened {
-    /* transform: scale(1); */
     pointer-events: all;
     opacity: 1;
   }

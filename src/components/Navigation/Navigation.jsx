@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 import { LogoutModal } from 'components/LogoutModal/LogoutModal';
 import { UserMenuModal } from 'components/UserMenuModal/UserMenuModal';
 import { EditContactFrom } from 'components/EditContactForm/EditContactForm';
+import closeMenu from 'utils/additionalMenuClosing';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -21,7 +22,9 @@ const Navigation = () => {
           <EditContactFrom />
         </>
       )}
-      <StlyledHeader>{isLoggedIn ? <UserMenu /> : <NavBar />}</StlyledHeader>
+      <StlyledHeader onClick={closeMenu}>
+        {isLoggedIn ? <UserMenu /> : <NavBar />}
+      </StlyledHeader>
 
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />
