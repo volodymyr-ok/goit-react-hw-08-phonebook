@@ -6,7 +6,8 @@ import { addContact } from 'redux/contactsOperations';
 import { StyledForm } from 'utils/commonStyles';
 import { StyledWrapper } from './Form.styled';
 import { FiUserPlus } from 'react-icons/fi';
-import { VscAdd, VscChromeMinimize } from 'react-icons/vsc';
+import { MdKeyboardArrowUp } from 'react-icons/md';
+import { HiOutlineMinusSm } from 'react-icons/hi';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -100,12 +101,12 @@ export const Form = () => {
         {isCreatorOpened ? (
           <>
             <span>Hide creator</span>
-            <VscChromeMinimize />
+            <HiOutlineMinusSm />
           </>
         ) : (
           <>
             <span>Create contact</span>
-            <VscAdd />
+            <MdKeyboardArrowUp />
           </>
         )}
       </button>

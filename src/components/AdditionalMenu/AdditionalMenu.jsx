@@ -3,13 +3,13 @@ import { deleteContact } from 'redux/contactsOperations';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { MdOutlineCall, MdOutlineModeEditOutline } from 'react-icons/md';
 import { Menu } from './AdditionalMenu.styled';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export const AdditionalMenu = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const [nameForChange, setNameForChange] = useState('');
-  const [numberForChange, setNumberForChange] = useState('');
-  const [idForChange, setIdForChange] = useState('');
+  // const [nameForChange, setNameForChange] = useState('');
+  // const [numberForChange, setNumberForChange] = useState('');
+  // const [idForChange, setIdForChange] = useState('');
 
   const closeMenu = () => {
     const modals = document.querySelectorAll('.additional-menu');

@@ -12,6 +12,9 @@ export const StlyledHeader = styled.header`
   justify-content: center;
 
   background-color: ${colors.headerBG};
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 1px 5px 0px ${colors.darkTransparent};
 
   padding: 15px;
   margin-bottom: 15px;

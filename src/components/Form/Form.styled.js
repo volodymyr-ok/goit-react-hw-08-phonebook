@@ -38,6 +38,7 @@ export const StyledWrapper = styled.div`
     align-items: center;
     gap: 5px;
 
+    height: 40px;
     width: 250px;
     padding: 5px 10px;
     outline: none;
