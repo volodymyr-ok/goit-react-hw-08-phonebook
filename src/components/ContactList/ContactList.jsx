@@ -6,8 +6,15 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contactsOperations';
 import { TbMoodEmpty } from 'react-icons/tb';
 import closeMenu from 'utils/additionalMenuClosing';
+import { EditContactFrom } from 'components/EditContactForm/EditContactForm';
+import { useState } from 'react';
 
 export const ContactList = () => {
+  const [nameForChange, setNameForChange] = useState('Name');
+  const [numberForChange, setNumberForChange] = useState('Number');
+  const [idForChange, setIdForChange] = useState('');
+  console.log(nameForChange);
+
   const contacts = useSelector(getContacts);
   const filterValue = useSelector(getFilter);
   const dispatch = useDispatch();
@@ -29,7 +36,17 @@ export const ContactList = () => {
       <StyledUL onClick={closeMenu}>
         {filteredContacts() ? (
           filteredContacts()?.map(({ id, name, number }) => {
-            return <ContactItem key={id} id={id} name={name} number={number} />;
+            return (
+              <ContactItem
+                key={id}
+                id={id}
+                name={name}
+                number={number}
+                changeName={setNameForChange}
+                changeNumber={setNumberForChange}
+                changeId={setIdForChange}
+              />
+            );
           })
         ) : (
           <div className="empty-list">
@@ -38,6 +55,15 @@ export const ContactList = () => {
           </div>
         )}
       </StyledUL>
+
+      <EditContactFrom
+        name={nameForChange}
+        number={numberForChange}
+        id={idForChange}
+        resetName={setNameForChange}
+        resetNumber={setNumberForChange}
+        resetId={setIdForChange}
+      />
     </>
   );
 };

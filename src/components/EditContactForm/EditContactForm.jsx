@@ -1,11 +1,17 @@
-import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+// import { useSelector } from 'react-redux';
+// import { getContacts } from 'redux/selectors';
 import { Btn } from 'utils/commonStyles';
 import { Backdrop } from './EditContactForm.styled';
 
-export const EditContactFrom = () => {
-  const contacts = useSelector(getContacts);
-  console.log(contacts);
+export const EditContactFrom = (
+  id,
+  name,
+  number,
+  changeName,
+  changeNumber,
+  changeId
+) => {
+  // const contacts = useSelector(getContacts);
 
   const closeModal = e => {
     console.log(e.target);

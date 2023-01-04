@@ -7,7 +7,7 @@ import { StlyledHeader } from './Navigation.styled';
 import { Suspense } from 'react';
 import { LogoutModal } from 'components/LogoutModal/LogoutModal';
 import { UserMenuModal } from 'components/UserMenuModal/UserMenuModal';
-import { EditContactFrom } from 'components/EditContactForm/EditContactForm';
+// import { EditContactFrom } from 'components/EditContactForm/EditContactForm';
 import closeMenu from 'utils/additionalMenuClosing';
 
 const Navigation = () => {
@@ -19,7 +19,7 @@ const Navigation = () => {
         <>
           <LogoutModal />
           <UserMenuModal />
-          <EditContactFrom />
+          {/* <EditContactFrom /> */}
         </>
       )}
       <StlyledHeader onClick={closeMenu}>

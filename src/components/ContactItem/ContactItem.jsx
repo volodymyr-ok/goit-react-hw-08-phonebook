@@ -4,7 +4,14 @@ import { RxDotsVertical } from 'react-icons/rx';
 import { AdditionalMenu } from 'components/AdditionalMenu/AdditionalMenu';
 import { Btn } from 'utils/commonStyles';
 
-export const ContactItem = ({ id, name, number }) => {
+export const ContactItem = ({
+  id,
+  name,
+  number,
+  changeName,
+  changeNumber,
+  changeId,
+}) => {
   const words = name.split(' ');
   const leters = [];
   words.forEach(word => {
@@ -18,7 +25,7 @@ export const ContactItem = ({ id, name, number }) => {
     const r = randomBetween(0, 255);
     const g = randomBetween(0, 255);
     const b = randomBetween(0, 255);
-    const rgb = `rgba(${r},${g},${b}, 0.1)`; // Collect all to a css color string
+    const rgb = `rgba(${r},${g},${b}, 0.1)`;
 
     return rgb;
   };
@@ -56,7 +63,14 @@ export const ContactItem = ({ id, name, number }) => {
         >
           <RxDotsVertical size={30} />
         </Btn>
-        <AdditionalMenu id={id} name={name} number={number} />
+        <AdditionalMenu
+          id={id}
+          name={name}
+          number={number}
+          changeName={changeName}
+          changeNumber={changeNumber}
+          changeId={changeId}
+        />
       </StyledLI>
     </>
   );

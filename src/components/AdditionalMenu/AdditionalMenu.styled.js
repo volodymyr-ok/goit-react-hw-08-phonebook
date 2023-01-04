@@ -41,6 +41,13 @@ export const Menu = styled.ul`
     color: ${colors.mainColor};
     font-size: 18px;
 
+    cursor: pointer;
+
+    :hover,
+    :focus {
+      color: ${colors.white};
+    }
+
     a {
       width: 100%;
       height: 100%;

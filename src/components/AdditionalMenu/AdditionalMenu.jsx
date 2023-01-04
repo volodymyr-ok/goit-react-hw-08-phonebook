@@ -3,15 +3,21 @@ import { deleteContact } from 'redux/contactsOperations';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { MdOutlineCall, MdOutlineModeEditOutline } from 'react-icons/md';
 import { Menu } from './AdditionalMenu.styled';
-// import { useState } from 'react';
 
-export const AdditionalMenu = ({ id, name, number }) => {
+export const AdditionalMenu = ({
+  id,
+  name,
+  number,
+  changeName,
+  changeNumber,
+  changeId,
+}) => {
   const dispatch = useDispatch();
-  // const [nameForChange, setNameForChange] = useState('');
-  // const [numberForChange, setNumberForChange] = useState('');
-  // const [idForChange, setIdForChange] = useState('');
 
   const handleEditContact = () => {
+    changeName(name);
+    changeNumber(number);
+    changeId(id);
     const modal = document.querySelector('.edit-contact-modal');
     modal.classList.add('opened');
   };
