@@ -44,12 +44,14 @@ export const deleteContact = createAsyncThunk(
 
 export const changeContact = createAsyncThunk(
   'contacts/changeContact',
-  async (id, { rejectWithValue }) => {
+  async ({ id, contactData }, thunkAPI) => {
+    console.log(id);
+    console.log(contactData);
     try {
-      await changeContactAPI(id);
-      return id;
+      const { data } = await changeContactAPI(id, contactData);
+      return data;
     } catch (e) {
-      return rejectWithValue(e.message);
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

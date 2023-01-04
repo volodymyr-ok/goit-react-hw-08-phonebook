@@ -6,6 +6,7 @@ import { fetchCurrentUser } from 'redux/authOperations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { lazy } from 'react';
+import { AppAsBody } from './App.styled';
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 const RegisterView = lazy(() => import('pages/RegisterView/RegisterView'));
 const LoginView = lazy(() => import('pages/LoginView/LoginView'));
@@ -18,7 +19,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <AppAsBody>
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route
@@ -51,6 +52,6 @@ export const App = () => {
           }
         />
       </Routes>
-    </>
+    </AppAsBody>
   );
 };

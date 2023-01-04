@@ -37,7 +37,7 @@ const contactsSlice = createSlice({
         state.error = null;
       })
       .addCase(addContact.rejected, (state, action) =>
-        handlePending(state, action)
+        handleRejected(state, action)
       )
 
       .addCase(deleteContact.pending, state => handlePending(state))
@@ -49,17 +49,27 @@ const contactsSlice = createSlice({
         );
       })
       .addCase(deleteContact.rejected, (state, action) =>
-        handlePending(state, action)
+        handleRejected(state, action)
       )
 
       .addCase(changeContact.pending, state => handlePending(state))
       .addCase(changeContact.fulfilled, (state, action) => {
+        console.log('action.payload', action.payload);
+        console.log('state', state);
+
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+
+        // state.items = state.items.map(item => {
+        //   console.log('item', item);
+        //   // if (item.id === action.payload.id) {
+        //   //   return action.payload;
+        //   // }
+        //   // return item;
+        // });
       })
       .addCase(changeContact.rejected, (state, action) =>
-        handlePending(state, action)
+        handleRejected(state, action)
       );
   },
 });

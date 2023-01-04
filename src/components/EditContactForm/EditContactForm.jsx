@@ -1,20 +1,21 @@
-// import { useSelector } from 'react-redux';
-// import { getContacts } from 'redux/selectors';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeContact, fetchContacts } from 'redux/contactsOperations';
+import { getContacts } from 'redux/selectors';
 import { Btn } from 'utils/commonStyles';
+import { editContactsCheking } from 'utils/contactsChecking';
 import { Backdrop } from './EditContactForm.styled';
 
-export const EditContactFrom = (
-  id,
-  name,
-  number,
-  changeName,
-  changeNumber,
-  changeId
-) => {
-  // const contacts = useSelector(getContacts);
+export const EditContactFrom = ({ id, name, number }) => {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.querySelector('#name-changer').value = name;
+    document.querySelector('#num-changer').value = number;
+  }, [name, number]);
 
   const closeModal = e => {
-    console.log(e.target);
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -24,23 +25,29 @@ export const EditContactFrom = (
 
   const handleSubmit = event => {
     event.preventDefault();
+    const form = event.target;
+    const contactData = {
+      name: form.elements.name.value,
+      number: form.elements.number.value,
+    };
+    console.log('contactData', contactData);
 
-    // const inContactList = contacts.filter(contact =>
-    //   contactsCheking(contact, { name, number })
-    // ).length;
+    const inContactList = contacts.filter(contact =>
+      editContactsCheking(contact, contactData, id)
+    ).length;
 
-    // if (!inContactList) {
-    //   toggleCreator();
-    //   dispatch(addContact({ name, number }));
-    // }
+    if (!inContactList) {
+      dispatch(changeContact({ id, contactData }));
 
-    // reset();
+      dispatch(fetchContacts());
+      document.querySelector('.edit-contact-modal').classList.remove('opened');
+    }
   };
 
   return (
     <Backdrop className="edit-contact-modal" onClick={closeModal}>
       <form className="edit-contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="name-changer">Name</label>
+        <label htmlFor="name-changer">{name}</label>
         <input
           type="text"
           name="name"
@@ -50,7 +57,7 @@ export const EditContactFrom = (
           required
         />
 
-        <label htmlFor="num-changer">Number</label>
+        <label htmlFor="num-changer">{number}</label>
         <input
           type="tel"
           name="number"

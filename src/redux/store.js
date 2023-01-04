@@ -14,6 +14,8 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+// console.log(storage.getItem('persist:theme'));
+
 const middleware = getDefaultMiddleware => {
   return getDefaultMiddleware({
     serializableCheck: {
@@ -28,10 +30,16 @@ const persistConfig = {
   whitelist: ['token'],
 };
 
+const persistThemeConfig = {
+  key: 'theme',
+  storage,
+  whitelist: ['theme'],
+};
+
 export const store = configureStore({
   reducer: {
     contacts: contactsReducer,
-    filter: filterReducer,
+    filter: persistReducer(persistThemeConfig, filterReducer),
     auth: persistReducer(persistConfig, authReducer),
   },
   middleware,

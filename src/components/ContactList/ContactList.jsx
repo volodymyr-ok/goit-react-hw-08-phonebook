@@ -13,7 +13,6 @@ export const ContactList = () => {
   const [nameForChange, setNameForChange] = useState('Name');
   const [numberForChange, setNumberForChange] = useState('Number');
   const [idForChange, setIdForChange] = useState('');
-  console.log(nameForChange);
 
   const contacts = useSelector(getContacts);
   const filterValue = useSelector(getFilter);
@@ -60,9 +59,6 @@ export const ContactList = () => {
         name={nameForChange}
         number={numberForChange}
         id={idForChange}
-        resetName={setNameForChange}
-        resetNumber={setNumberForChange}
-        resetId={setIdForChange}
       />
     </>
   );

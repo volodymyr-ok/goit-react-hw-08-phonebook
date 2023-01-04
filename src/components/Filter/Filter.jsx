@@ -1,5 +1,5 @@
 import { FiltersForm } from './Filter.styled';
-import { useSelector, useDispatch } from 'react-redux'; // useDispatch,
+import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from 'redux/selectors';
 import { changeFilter } from 'redux/filterSlice';
 import closeMenu from 'utils/additionalMenuClosing';

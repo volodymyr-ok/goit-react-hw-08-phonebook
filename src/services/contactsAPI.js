@@ -16,6 +16,6 @@ export const deleteContactAPI = async id => {
 };
 
 export const changeContactAPI = async (id, data) => {
-  const response = await axios.patch(`/contacts/${id}, data`);
+  const response = await axios.patch(`/contacts/${id}`, data);
   return response;
 };

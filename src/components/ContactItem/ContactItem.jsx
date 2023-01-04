@@ -14,9 +14,7 @@ export const ContactItem = ({
 }) => {
   const words = name.split(' ');
   const leters = [];
-  words.forEach(word => {
-    leters.push(word[0]);
-  });
+  words.forEach(word => leters.push(word[0]));
   const fisrtLetters = leters.join('');
 
   const getRandomColor = () => {
