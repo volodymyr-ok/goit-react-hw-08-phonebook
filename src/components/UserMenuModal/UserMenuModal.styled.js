@@ -29,9 +29,9 @@ export const Backdrop = styled.div`
 
   .user-menu-modal {
     margin: 75px 11px 0 auto;
-
     height: fit-content;
     padding: 15px;
+
     background-color: ${({ theme }) => theme.userMenuBG};
 
     border-radius: 5px;
@@ -40,10 +40,10 @@ export const Backdrop = styled.div`
     border-color: ${({ theme }) => theme.userMenuBorder};
 
     display: inline-flex;
+    gap: 15px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 15px;
 
     opacity: 0;
     transform: translateY(-35%);
@@ -61,6 +61,7 @@ export const Backdrop = styled.div`
   button {
     height: 30px;
     width: 90px;
+
     justify-content: space-around;
 
     font-size: 14px;
@@ -77,8 +78,8 @@ export const Backdrop = styled.div`
   .theme-toggle {
     padding: 0;
     gap: 0;
-    /* border: 1px solid #fff; */
     border-radius: 5px;
+    transition: all 250ms ease-in-out;
 
     span {
       display: inline-flex;
@@ -86,6 +87,12 @@ export const Backdrop = styled.div`
       align-items: center;
       width: 45px;
       height: 28px;
+
+      transition: all 250ms ease-in-out;
+
+      svg {
+        transition: all 250ms ease-in-out;
+      }
     }
 
     .dark {
@@ -100,6 +107,25 @@ export const Backdrop = styled.div`
       border-top-right-radius: 5px;
       border-bottom-right-radius: 4px;
       color: ${({ theme }) => theme.lightThemeIcon};
+    }
+
+    :hover,
+    :focus {
+      .dark {
+        background-color: ${({ theme }) => theme.darkThemeTogglerHover};
+        svg {
+          color: ${({ theme }) => theme.darkThemeIconHover};
+          transform: scale(${({ theme }) => theme.darkIconScale});
+        }
+      }
+
+      .light {
+        background-color: ${({ theme }) => theme.lightThemeTogglerHover};
+        svg {
+          color: ${({ theme }) => theme.lightThemeIconHover};
+          transform: scale(${({ theme }) => theme.lightIconScale});
+        }
+      }
     }
   }
 `;

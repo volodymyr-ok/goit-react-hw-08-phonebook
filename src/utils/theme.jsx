@@ -24,11 +24,34 @@ export const darkTheme = {
   userMenuBtnBG: '#ffffff0',
   userMenuBtnBorder: '#ffffff0',
   userMenuBtnBGHover: 'inherit',
+
   themeTogglerBG: '#d3d5ff40',
+
   darkThemeToggler: '#46475c',
+  darkThemeTogglerHover: 'transparent',
   darkThemeIcon: '#b6baff',
+  darkThemeIconHover: '#46475c',
+  darkIconScale: '1',
+
   lightThemeToggler: 'transparent',
+  lightThemeTogglerHover: '#46475c',
   lightThemeIcon: '#46475c',
+  lightThemeIconHover: '#b6baff',
+  lightIconScale: '1.5',
+
+  mainTransparent: '#b6baff14',
+
+  editIcon: '#fba831',
+  callIcon: '#31fb91',
+  deleteIcon: '#fb3131',
+
+  noBtnBG: '#b53d45',
+  noBtnText: '#fff',
+  noBtnBorder: '#b53d45',
+
+  yesBtnBG: '#429352',
+  yesBtnText: '#fff',
+  yesBtnBorder: '#429352',
 
   inputHoverLine: '#b6baff',
   filterInputBG: '#b6baff14',
@@ -38,35 +61,29 @@ export const darkTheme = {
   submitContactBtnText: '#222327',
   submitContactBtnBorder: '#b6baff',
 
-  // -----------------------------
+  enterBtnBG: '#b6baff',
+  enterBtnBGHover: 'transparent',
+
+  enterBtnText: '#222327',
+  enterBtnTextHover: 'inherit',
+
+  enterBtnBorder: '#b6baff',
+  enterBtnBorderHover: '#b6baff',
 
   // -------------------------
 
   mainColor: '#b6baff',
   minorColor: '#222327',
-
   mainTextColor: '#222327',
   minorTextColor: '#fff',
 
-  bgColor: '#222327',
-
   inputText: '#7f86ff',
-
+  bgColor: '#222327',
   backdropBg: '#2f303dcc',
   modalBg: '#25262d',
 
-  btnText: '#222327',
   deleteContactBtn: '#cc4343',
-
-  editIcon: '#fba831',
-  callIcon: '#31fb91',
-  deleteIcon: '#fb3131',
-
-  mainTransparent: '#b6baff14',
-  noBtn: '#a72a33',
-  yesBtn: '#37a94e',
-
-  // logoText: '#b6baff',
+  btnText: '#222327',
 };
 
 // LIGHT_LIGHT_LIGHT_LIGHT_LIGHT
@@ -76,20 +93,47 @@ export const lightTheme = {
 
   mainBG: '#fff',
   mainText: '#222327',
+
   logoText: '#254555',
   logoBG: '#f7f7f775',
+
   userBtnElems: '#222327',
   settingsIcon: '#fff',
+
   userMenuBG: '#b6baff91',
   userMenuBorder: '#a19f9f',
+
   userMenuBtnBG: '#b6baff',
   userMenuBtnBorder: '#fff',
   userMenuBtnBGHover: '#fff',
+
   themeTogglerBG: '#fff',
+
   darkThemeToggler: 'transparent',
+  darkThemeTogglerHover: '#46475c',
   darkThemeIcon: 'inherit',
+  darkThemeIconHover: '#fff',
+  darkIconScale: '1.5',
+
   lightThemeToggler: '#46475c',
+  lightThemeTogglerHover: 'transparent',
   lightThemeIcon: '#ffffff',
+  lightThemeIconHover: '#46475c',
+  lightIconScale: '1',
+
+  mainTransparent: '#656565d1',
+
+  editIcon: '#e98800',
+  callIcon: '#007338',
+  deleteIcon: '#fb3131',
+
+  noBtnBG: '#b53d45',
+  noBtnText: '#fff',
+  noBtnBorder: '#b53d45',
+
+  yesBtnBG: '#429352',
+  yesBtnText: '#fff',
+  yesBtnBorder: '#429352',
 
   inputHoverLine: '#b6baff',
   filterInputBG: '#e9ecff',
@@ -99,40 +143,27 @@ export const lightTheme = {
   submitContactBtnText: 'inherit',
   submitContactBtnBorder: '#fff',
 
-  // -----------------------------
+  enterBtnBG: '#b6baff',
+  enterBtnBGHover: '#f7f7f775',
+
+  enterBtnText: '#222327',
+  enterBtnTextHover: '#b6baff',
+
+  enterBtnBorder: '#b6baff',
+  enterBtnBorderHover: '#b6baff',
 
   // -------------------------
 
   mainColor: '#222327',
   minorColor: '#b6baff',
-
   mainTextColor: '#fff',
   minorTextColor: '#222327',
 
   bgColor: '#ffffff',
-
   inputText: '#7f86ff',
-  // headerBG: '#25262d',
-  // modalBg: '#25262d',
   modalBg: '#b6baff',
-
-  // backdropBg: '#2f303dcc',
   backdropBg: '#707294cc',
 
-  btnText: '#222327',
   deleteContactBtn: '#cc4343',
-
-  editIcon: '#e98800',
-  callIcon: '#007338',
-  deleteIcon: '#fb3131',
-
-  mainTransparent: '#656565d1',
-  noBtn: '#a72a33',
-  yesBtn: '#37a94e',
-
-  logoBg: '#f7f7f775',
-  // logoText: '#fff',
+  btnText: '#222327',
 };
-
-export const colors = lightTheme;
-// export const colors = darkTheme || lightTheme;

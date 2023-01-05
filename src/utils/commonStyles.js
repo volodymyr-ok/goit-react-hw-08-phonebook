@@ -21,52 +21,45 @@ export const StyledForm = styled.form`
     font-size: 20px;
 
     input {
-      margin-top: 3px;
-      border-radius: 5px;
-      border: 1px solid ${({ theme }) => theme.mainBorder};
       width: 250px;
       height: 35px;
+      margin-top: 3px;
+      padding: 5px 10px;
+
+      border-radius: 5px;
+      border: 1px solid ${({ theme }) => theme.mainBorder};
 
       background-color: ${({ theme }) => theme.filterInputBG};
-      color: #7f86ff;
+      color: ${({ theme }) => theme.inputText};
+
       text-align: center;
       font-family: inherit;
       font-size: 20px;
-      padding: 5px 10px;
-      /* 
-      :focus,
-      :hover {
-        outline: ${({ theme }) => theme.inputHoverLine};
-      } */
     }
   }
 
   button {
-    border-radius: 5px;
-    border: 1px solid ${({ theme }) => theme.mainColor};
     padding: 5px 10px;
-    background-color: ${({ theme }) => theme.mainColor};
 
-    color: ${({ theme }) => theme.btnText};
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+
     font-weight: 700;
     font-family: inherit;
-    cursor: pointer;
 
-    &:hover,
-    &:focus {
-      background-color: transparent;
-      color: inherit;
-    }
+    cursor: pointer;
   }
 `;
 
 export const Btn = styled.button`
   border-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.mainColor};
   padding: 5px 10px;
-  background-color: ${({ theme }) => theme.mainColor};
 
+  border: 1px solid ${({ theme }) => theme.mainColor};
+  background-color: ${({ theme }) => theme.mainColor};
   color: ${({ theme }) => theme.btnText};
+
   font-size: 20px;
   font-weight: 700;
   font-family: inherit;

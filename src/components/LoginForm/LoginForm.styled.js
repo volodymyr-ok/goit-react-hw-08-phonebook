@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledRegisterDiv = styled.div`
+export const StyledLoginDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

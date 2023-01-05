@@ -46,29 +46,34 @@ export const Modal = styled.div`
   button {
     font-size: 18px;
     min-width: 50px;
-    /* border-color: ${({ theme }) => theme.submitContactBtnBorder};
-    background-color: ${({ theme }) => theme.submitContactBtnBG};
-    color: ${({ theme }) => theme.submitContactBtnText}; */
-    border-color: transparent;
     display: inline-flex;
     justify-content: center;
+    border-width: 2px;
 
-    &.yes,
     &.yes {
-      background-color: ${({ theme }) => theme.yesBtn};
-      color: ${({ theme }) => theme.minorTextColor};
-    }
-    &.no,
-    &.no {
-      background-color: ${({ theme }) => theme.noBtn};
-      color: ${({ theme }) => theme.minorTextColor};
+      background-color: ${({ theme }) => theme.yesBtnBG};
+      color: ${({ theme }) => theme.yesBtnText};
+      border-color: ${({ theme }) => theme.yesBtnBorder};
+
+      :hover,
+      :focus {
+        background-color: ${({ theme }) => theme.yesBtnText};
+        color: ${({ theme }) => theme.yesBtnBG};
+        border-color: ${({ theme }) => theme.yesBtnBG};
+      }
     }
 
-    :hover,
-    :focus {
-      border-color: ${({ theme }) => theme.submitContactBtnBorder};
-      background-color: ${({ theme }) => theme.submitContactBtnBG};
-      color: ${({ theme }) => theme.submitContactBtnText};
+    &.no {
+      background-color: ${({ theme }) => theme.noBtnBG};
+      color: ${({ theme }) => theme.noBtnText};
+      border-color: ${({ theme }) => theme.noBtnBorder};
+
+      :hover,
+      :focus {
+        background-color: ${({ theme }) => theme.noBtnText};
+        color: ${({ theme }) => theme.noBtnBG};
+        border-color: ${({ theme }) => theme.noBtnBG};
+      }
     }
   }
 `;
