@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const FiltersForm = styled.form`
   width: 250px;
@@ -21,12 +20,13 @@ export const FiltersForm = styled.form`
   input {
     margin: 0 auto;
 
-    border-radius: 5px;
-    border: 1px solid ${colors.mainBorder};
     width: 250px;
     height: 35px;
-    background-color: ${colors.mainTransparent};
-    color: ${colors.inputText};
+    border-radius: 5px;
+    border: 1px solid ${({ theme }) => theme.mainBorder};
+    background-color: ${({ theme }) => theme.filterInputBG};
+    color: ${({ theme }) => theme.inputText};
+
     text-align: center;
     font-family: inherit;
     font-size: 20px;
@@ -34,13 +34,7 @@ export const FiltersForm = styled.form`
 
     :focus,
     :hover {
-      outline: none;
-    }
-
-    :placeholder-shown {
-      color: ${colors.mainColor};
-      text-align: center;
-      font-size: 20px;
+      outline: 2px solid ${({ theme }) => theme.inputHoverLine};
     }
   }
 `;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -9,7 +8,7 @@ export const Backdrop = styled.div`
 
   width: 100%;
   height: 100%;
-  background-color: ${colors.backdropBg};
+  background-color: ${({ theme }) => theme.backdropBg};
 
   display: flex;
   justify-content: center;
@@ -25,10 +24,10 @@ export const Backdrop = styled.div`
   }
 
   form {
-    background-color: ${colors.modalBg};
+    background-color: ${({ theme }) => theme.modalBg};
     padding: 15px;
     border-radius: 5px;
-    border: 1px solid ${colors.mainBorder};
+    border: 1px solid ${({ theme }) => theme.mainBorder};
 
     display: flex;
     flex-direction: column;
@@ -38,22 +37,23 @@ export const Backdrop = styled.div`
 
     input {
       border-radius: 5px;
-      border: 1px solid ${colors.mainBorder};
       width: 250px;
       height: 35px;
       padding: 5px 10px;
 
       margin: 0 auto 10px;
 
-      background-color: ${colors.mainTransparent};
-      color: ${colors.inputText};
       text-align: center;
       font-family: inherit;
       font-size: 20px;
 
+      border: 1px solid ${({ theme }) => theme.mainBorder};
+      background-color: ${({ theme }) => theme.filterInputBG};
+      color: ${({ theme }) => theme.inputText};
+
       :focus,
       :hover {
-        outline: none;
+        outline: 2px solid ${({ theme }) => theme.inputHoverLine};
       }
     }
 
@@ -71,6 +71,10 @@ export const Backdrop = styled.div`
 
       font-size: 14px;
       font-weight: 500;
+
+      background-color: ${({ theme }) => theme.submitContactBtnBG};
+      color: ${({ theme }) => theme.submitContactBtnText};
+      border-color: ${({ theme }) => theme.submitContactBtnBorder};
     }
   }
 `;

@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { StyledUL } from './NavBar.styled';
-import { MdLogin } from 'react-icons/md';
-import { MdOutlineAssignment } from 'react-icons/md';
+import { FaRegAddressBook, FaRegUser } from 'react-icons/fa';
 import { Logo } from 'components/Logo/Logo';
 
 export const NavBar = () => {
@@ -14,14 +13,14 @@ export const NavBar = () => {
       <li>
         <NavLink to={'/'}>
           Login
-          <MdLogin />
+          <FaRegUser />
         </NavLink>
       </li>
 
       <li>
         <NavLink to={'register'}>
           Register
-          <MdOutlineAssignment />
+          <FaRegAddressBook />
         </NavLink>
       </li>
     </StyledUL>

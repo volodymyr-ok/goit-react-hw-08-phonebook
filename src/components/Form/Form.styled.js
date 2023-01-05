@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledWrapper = styled.div`
   position: fixed;
@@ -7,8 +6,8 @@ export const StyledWrapper = styled.div`
   bottom: 0;
   right: 0;
 
-  box-shadow: 0px -1px 5px 0px ${colors.mainTransparent};
-  background-color: ${colors.modalBg};
+  box-shadow: 0px -1px 5px 0px ${({ theme }) => theme.mainTransparent};
+  background-color: ${({ theme }) => theme.modalBg};
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 
@@ -38,9 +37,9 @@ export const StyledWrapper = styled.div`
     outline: none;
     border-radius: 5px;
 
-    border: 1px solid ${colors.mainBorder};
+    border: 1px solid ${({ theme }) => theme.mainBorder};
     background-color: transparent;
-    color: ${colors.mainColor};
+    color: ${({ theme }) => theme.mainColor};
 
     font-size: 20px;
     font-weight: 500;
@@ -56,6 +55,13 @@ export const StyledWrapper = styled.div`
 
     &.opend {
       max-height: 308px;
+    }
+
+    input {
+      :hover,
+      :focus {
+        outline: ${({ theme }) => theme.inputHoverLine};
+      }
     }
   }
 
@@ -77,5 +83,9 @@ export const StyledWrapper = styled.div`
 
     font-size: 18px;
     font-weight: 500;
+
+    background-color: ${({ theme }) => theme.submitContactBtnBG};
+    color: ${({ theme }) => theme.submitContactBtnText};
+    border-color: ${({ theme }) => theme.submitContactBtnBorder};
   }
 `;

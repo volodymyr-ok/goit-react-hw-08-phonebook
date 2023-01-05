@@ -35,6 +35,8 @@ export const UserMenuModal = () => {
     } else {
       dispatch(changeTheme('dark'));
     }
+    document.querySelector('#creator').classList.remove('opend');
+    document.querySelector('.creator-wrap').classList.remove('opend');
   };
 
   return (

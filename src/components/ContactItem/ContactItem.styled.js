@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledLI = styled.li`
   padding: 10px 0;
-  border-top: 1px solid ${colors.mainBorder};
-  border-bottom: 1px solid ${colors.mainBorder};
+  border-top: 1px solid ${({ theme }) => theme.mainBorder};
+  border-bottom: 1px solid ${({ theme }) => theme.mainBorder};
   border-radius: 5px;
 
   position: relative;
@@ -22,7 +21,7 @@ export const StyledLI = styled.li`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    border: 1px solid ${colors.mainBorder};
+    border: 1px solid ${({ theme }) => theme.mainBorder};
   }
   .contact-data {
     display: inline-flex;
@@ -32,7 +31,7 @@ export const StyledLI = styled.li`
     .name {
       /* font-weight: 400; */
       font-size: 18px;
-      color: ${colors.mainColor};
+      color: ${({ theme }) => theme.mainColor};
     }
   }
 
@@ -48,11 +47,11 @@ export const StyledLI = styled.li`
 
     border-radius: 50%;
     border: none;
-    background-color: ${colors.deleteContactBtn};
+    background-color: ${({ theme }) => theme.deleteContactBtn};
     background-color: transparent;
 
-    color: ${colors.minorColor};
-    color: ${colors.mainColor};
+    color: ${({ theme }) => theme.minorColor};
+    color: ${({ theme }) => theme.mainColor};
     font-weight: 700;
     font-family: inherit;
 

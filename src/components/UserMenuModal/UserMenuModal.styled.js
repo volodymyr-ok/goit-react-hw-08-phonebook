@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -15,12 +14,10 @@ export const Backdrop = styled.div`
 
   opacity: 0;
   pointer-events: none;
-  /* transform: scale(0); */
 
   transition: all 250ms ease-in-out;
 
   &.shown {
-    /* transform: scale(1); */
     pointer-events: all;
     opacity: 1;
   }
@@ -35,9 +32,12 @@ export const Backdrop = styled.div`
 
     height: fit-content;
     padding: 15px;
-    background-color: ${colors.backdropBg};
-    border: 1px solid ${colors.mainBorder};
+    background-color: ${({ theme }) => theme.userMenuBG};
+
     border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${({ theme }) => theme.userMenuBorder};
 
     display: inline-flex;
     flex-direction: column;
@@ -64,41 +64,42 @@ export const Backdrop = styled.div`
     justify-content: space-around;
 
     font-size: 14px;
-  }
 
-  .logout-btn {
-    border: 1px solid transparent;
+    background-color: ${({ theme }) => theme.userMenuBtnBG};
+    border: 1px solid ${({ theme }) => theme.themeTogglerBG};
     :hover,
     :focus {
-      border: 1px solid ${colors.mainBorder};
+      background-color: ${({ theme }) => theme.userMenuBtnBGHover};
+      border: 1px solid ${({ theme }) => theme.userMenuBorder};
     }
   }
 
   .theme-toggle {
     padding: 0;
     gap: 0;
-    background-color: transparent;
-    border: transparent;
+    /* border: 1px solid #fff; */
+    border-radius: 5px;
 
     span {
       display: inline-flex;
       justify-content: center;
       align-items: center;
       width: 45px;
-      height: 30px;
+      height: 28px;
     }
 
-    .dark.active {
+    .dark {
+      background-color: ${({ theme }) => theme.darkThemeToggler};
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      background-color: ${colors.darkThemeBtnBg};
-      color: ${colors.mainColor};
+      color: ${({ theme }) => theme.darkThemeIcon};
     }
 
     .light {
-      background-color: ${colors.mainColor};
+      background-color: ${({ theme }) => theme.lightThemeToggler};
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-bottom-right-radius: 4px;
+      color: ${({ theme }) => theme.lightThemeIcon};
     }
   }
 `;

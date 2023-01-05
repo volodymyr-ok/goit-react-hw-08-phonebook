@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const Backdrop = styled.div`
   z-index: 2;
@@ -15,7 +14,7 @@ export const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${colors.backdropBg};
+  background-color: ${({ theme }) => theme.backdropBg};
   height: 100vh;
   width: 100vw;
 
@@ -27,9 +26,9 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   padding: 15px;
-  background-color: ${colors.modalBg};
+  background-color: ${({ theme }) => theme.modalBg};
   border-radius: 5px;
-  border: 1px solid ${colors.mainBorder};
+  border: 1px solid ${({ theme }) => theme.mainBorder};
 
   display: flex;
   flex-direction: column;
@@ -47,20 +46,29 @@ export const Modal = styled.div`
   button {
     font-size: 18px;
     min-width: 50px;
-    background-color: ${colors.mainColor};
-    color: ${colors.btnText};
+    /* border-color: ${({ theme }) => theme.submitContactBtnBorder};
+    background-color: ${({ theme }) => theme.submitContactBtnBG};
+    color: ${({ theme }) => theme.submitContactBtnText}; */
+    border-color: transparent;
     display: inline-flex;
     justify-content: center;
 
-    &.yes:hover,
-    &.yes:focus {
-      background-color: ${colors.yesBtn};
-      color: ${colors.mainTextColor};
+    &.yes,
+    &.yes {
+      background-color: ${({ theme }) => theme.yesBtn};
+      color: ${({ theme }) => theme.minorTextColor};
     }
-    &.no:hover,
-    &.no:focus {
-      background-color: ${colors.noBtn};
-      color: ${colors.mainTextColor};
+    &.no,
+    &.no {
+      background-color: ${({ theme }) => theme.noBtn};
+      color: ${({ theme }) => theme.minorTextColor};
+    }
+
+    :hover,
+    :focus {
+      border-color: ${({ theme }) => theme.submitContactBtnBorder};
+      background-color: ${({ theme }) => theme.submitContactBtnBG};
+      color: ${({ theme }) => theme.submitContactBtnText};
     }
   }
 `;

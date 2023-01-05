@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const Menu = styled.ul`
   position: absolute;
@@ -18,8 +17,8 @@ export const Menu = styled.ul`
 
   border-radius: 5px;
   border-bottom-right-radius: 0;
-  border: 1px solid ${colors.mainBorder};
-  background-color: ${colors.modalBg};
+  border: 1px solid ${({ theme }) => theme.mainBorder};
+  background-color: ${({ theme }) => theme.modalBg};
 
   &.opened {
     pointer-events: all;
@@ -38,14 +37,14 @@ export const Menu = styled.ul`
     background-color: transparent;
     border: none;
 
-    color: ${colors.mainColor};
+    color: ${({ theme }) => theme.mainColor};
     font-size: 18px;
 
     cursor: pointer;
 
     :hover,
     :focus {
-      color: ${colors.mainTextColor};
+      color: ${({ theme }) => theme.minorTextColor};
     }
 
     a {
@@ -61,16 +60,16 @@ export const Menu = styled.ul`
   }
 
   li:not(:last-child) {
-    border-bottom: 2px solid ${colors.mainBorder};
+    border-bottom: 2px solid ${({ theme }) => theme.mainBorder};
   }
 
   .editIcon {
-    color: ${colors.editIcon};
+    color: ${({ theme }) => theme.editIcon};
   }
   .callIcon {
-    color: ${colors.callIcon};
+    color: ${({ theme }) => theme.callIcon};
   }
   .deleteIcon {
-    color: ${colors.deleteIcon};
+    color: ${({ theme }) => theme.deleteIcon};
   }
 `;

@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledH2 = styled.h2`
   font-size: 38px;
   margin-bottom: 15px;
-  color: ${colors.mainColor};
+  color: ${({ theme }) => theme.mainColor};
   text-align: center;
 `;
 
@@ -19,36 +18,36 @@ export const StyledForm = styled.form`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 20px;
 
     input {
       margin-top: 3px;
       border-radius: 5px;
-      border: 1px solid ${colors.mainBorder};
+      border: 1px solid ${({ theme }) => theme.mainBorder};
       width: 250px;
       height: 35px;
 
-      background-color: ${colors.mainTransparent};
+      background-color: ${({ theme }) => theme.filterInputBG};
       color: #7f86ff;
       text-align: center;
       font-family: inherit;
       font-size: 20px;
       padding: 5px 10px;
-
-      &:focus {
-        background-color: ${colors.mainBorder};
-        outline: none;
-      }
+      /* 
+      :focus,
+      :hover {
+        outline: ${({ theme }) => theme.inputHoverLine};
+      } */
     }
   }
 
   button {
     border-radius: 5px;
-    border: 1px solid ${colors.mainColor};
+    border: 1px solid ${({ theme }) => theme.mainColor};
     padding: 5px 10px;
-    background-color: ${colors.mainColor};
+    background-color: ${({ theme }) => theme.mainColor};
 
-    color: ${colors.btnText};
+    color: ${({ theme }) => theme.btnText};
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
@@ -63,11 +62,11 @@ export const StyledForm = styled.form`
 
 export const Btn = styled.button`
   border-radius: 5px;
-  border: 1px solid ${colors.mainColor};
+  border: 1px solid ${({ theme }) => theme.mainColor};
   padding: 5px 10px;
-  background-color: ${colors.mainColor};
+  background-color: ${({ theme }) => theme.mainColor};
 
-  color: ${colors.btnText};
+  color: ${({ theme }) => theme.btnText};
   font-size: 20px;
   font-weight: 700;
   font-family: inherit;

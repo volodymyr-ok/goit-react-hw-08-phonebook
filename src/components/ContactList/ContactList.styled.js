@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledUL = styled.ul`
   display: flex;
@@ -17,7 +16,7 @@ export const StyledUL = styled.ul`
     width: 100%;
     gap: 5px;
     padding: 15px 0;
-    color: ${colors.mainColor};
+    color: ${({ theme }) => theme.mainColor};
     text-align: center;
     text-transform: uppercase;
   }

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledUL = styled.ul`
   display: flex;
@@ -25,11 +24,11 @@ export const StyledUL = styled.ul`
         display: none;
       }
       &:not(.active) {
-        color: ${colors.mainTextColor};
+        color: ${({ theme }) => theme.minorTextColor};
       }
       &:not(.active):hover,
       &:not(.active):focus {
-        color: ${colors.mainColor};
+        color: ${({ theme }) => theme.mainColor};
       }
     }
   }

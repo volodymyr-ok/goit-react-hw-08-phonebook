@@ -1,15 +1,20 @@
-import { StyledCenteredDiv, StyledForm, StyledH2 } from 'utils/commonStyles';
+import { StyledForm, StyledH2 } from 'utils/commonStyles';
 import { useState } from 'react';
-import { logIn } from 'redux/authOperations';
 import { useDispatch } from 'react-redux';
+import { register } from 'redux/authOperations';
+import { StyledRegisterDiv } from './RegisterForm.styled';
 
-const Login = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
+      case 'name':
+        setName(value);
+        break;
       case 'email':
         setEmail(value);
         break;
@@ -23,16 +28,28 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(logIn({ email, password }));
+    dispatch(register({ name, email, password }));
+    setName('');
     setEmail('');
     setPassword('');
   };
 
   return (
-    <StyledCenteredDiv>
-      <StyledH2>Sign in your account</StyledH2>
+    <StyledRegisterDiv>
+      <StyledH2>Create your account</StyledH2>
 
       <StyledForm onSubmit={handleSubmit}>
+        <label>
+          Name
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
         <label>
           Email
           <input
@@ -53,10 +70,10 @@ const Login = () => {
             required
           />
         </label>
-        <button type="sumbit">Log in</button>
+        <button id="register-btn" type="sumbit">
+          Register
+        </button>
       </StyledForm>
-    </StyledCenteredDiv>
+    </StyledRegisterDiv>
   );
 };
-
-export default Login;

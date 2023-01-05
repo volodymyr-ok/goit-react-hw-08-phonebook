@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { colors } from 'utils/theme';
 
 export const StyledLogo = styled.h1`
-  color: ${colors.mainColor};
+  color: ${({ theme }) => theme.logoText};
   text-align: center;
   font-size: 22px;
   font-family: 'Laila', sans-serif;
@@ -16,6 +15,6 @@ export const StyledLogo = styled.h1`
     height: 30px;
     border-radius: 50%;
     transform: translate(-31%, -12%);
-    background-color: #3b4b5c;
+    background-color: ${({ theme }) => theme.logoBG};
   }
 `;
