@@ -10,12 +10,14 @@ export const NavBar = () => {
       <li>
         <Logo />
       </li>
+
       <li>
         <NavLink to={'/'}>
           Login
           <MdLogin />
         </NavLink>
       </li>
+
       <li>
         <NavLink to={'register'}>
           Register

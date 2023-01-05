@@ -45,7 +45,7 @@ export const Backdrop = styled.div`
 
       margin: 0 auto 10px;
 
-      background-color: ${colors.darkTransparent};
+      background-color: ${colors.mainTransparent};
       color: ${colors.inputText};
       text-align: center;
       font-family: inherit;

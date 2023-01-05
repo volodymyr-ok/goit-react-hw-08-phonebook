@@ -28,7 +28,7 @@ export const StyledForm = styled.form`
       width: 250px;
       height: 35px;
 
-      background-color: ${colors.darkTransparent};
+      background-color: ${colors.mainTransparent};
       color: #7f86ff;
       text-align: center;
       font-family: inherit;

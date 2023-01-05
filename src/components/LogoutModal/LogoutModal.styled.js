@@ -55,12 +55,12 @@ export const Modal = styled.div`
     &.yes:hover,
     &.yes:focus {
       background-color: ${colors.yesBtn};
-      color: ${colors.white};
+      color: ${colors.mainTextColor};
     }
     &.no:hover,
     &.no:focus {
       background-color: ${colors.noBtn};
-      color: ${colors.white};
+      color: ${colors.mainTextColor};
     }
   }
 `;

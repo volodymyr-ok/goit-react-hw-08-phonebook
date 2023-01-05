@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import { colors } from 'utils/theme';
 
 export const StyledUL = styled.ul`
   display: flex;
-  /* flex-direction: column; */
-  justify-content: space-between;
   align-items: center;
   height: 40px;
   width: 320px;
 
+  li:first-child {
+    margin-right: auto;
+  }
   li {
     a {
       font-size: 20px;
@@ -23,11 +25,11 @@ export const StyledUL = styled.ul`
         display: none;
       }
       &:not(.active) {
-        color: white;
+        color: ${colors.mainTextColor};
       }
       &:not(.active):hover,
       &:not(.active):focus {
-        color: #b6baff;
+        color: ${colors.mainColor};
       }
     }
   }

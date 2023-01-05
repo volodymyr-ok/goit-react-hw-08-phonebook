@@ -11,7 +11,7 @@ export const StyledUserMenuDiv = styled.div`
   width: 320px;
 
   .user-menu-btn {
-    color: ${colors.text};
+    color: ${colors.mainTextColor};
     background-color: transparent;
     border: 1px solid transparent;
 

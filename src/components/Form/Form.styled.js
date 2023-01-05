@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div`
   bottom: 0;
   right: 0;
 
-  box-shadow: 0px -1px 5px 0px ${colors.darkTransparent};
+  box-shadow: 0px -1px 5px 0px ${colors.mainTransparent};
   background-color: ${colors.modalBg};
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;

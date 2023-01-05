@@ -14,7 +14,7 @@ export const StlyledHeader = styled.header`
   background-color: ${colors.headerBG};
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 0px 1px 5px 0px ${colors.darkTransparent};
+  box-shadow: 0px 1px 5px 0px ${colors.mainTransparent};
 
   padding: 15px;
   margin-bottom: 15px;

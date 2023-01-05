@@ -1,17 +1,17 @@
-// import storage from 'redux-persist/lib/storage';
-// console.log(storage.getItem('persist:theme'));
-// const foo = async () => {
-//   const response = await storage.getItem('persist:theme');
-//   if (response.includes('dark')) {
-//     return console.log('hello');
-//   }
-//   return console.log('goodby');
-// };
-// foo();
+import { createGlobalStyle } from 'styled-components';
 
-const darkTheme = {
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.bgColor};
+    color: ${({ theme }) => theme.mainTextColor};
+    transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  }
+`;
+
+export const darkTheme = {
   mainColor: '#b6baff',
   minorColor: '#222327',
+  mainTextColor: '#fff',
 
   bgColor: '#222327',
   mainBorder: '#d3d5ff40',
@@ -31,17 +31,16 @@ const darkTheme = {
   callIcon: '#31fb91',
   deleteIcon: '#fb3131',
 
-  darkTransparent: '#b6baff14',
-  text: 'white',
+  mainTransparent: '#b6baff14',
   gold: '#ffd15b',
   noBtn: '#a72a33',
   yesBtn: '#37a94e',
-  white: '#fff',
 };
 
-const lightTheme = {
+export const lightTheme = {
   mainColor: '#b6baff',
   minorColor: '#222327',
+  mainTextColor: '#222327',
 
   bgColor: '#ffffff',
   mainBorder: '#d3d5ff40',
@@ -49,7 +48,6 @@ const lightTheme = {
   inputText: '#7f86ff',
   headerBG: '#25262d',
 
-  // backdropBg: '#2f303df7',
   backdropBg: '#2f303dcc',
   modalBg: '#25262d',
 
@@ -62,12 +60,11 @@ const lightTheme = {
   callIcon: '#31fb91',
   deleteIcon: '#fb3131',
 
-  darkTransparent: '#b6baff14',
-  text: 'white',
+  mainTransparent: '#b6baff14',
   gold: '#ffd15b',
   noBtn: '#a72a33',
   yesBtn: '#37a94e',
-  white: '#fff',
 };
 
+// export const colors = lightTheme;
 export const colors = darkTheme || lightTheme;

@@ -25,7 +25,7 @@ export const FiltersForm = styled.form`
     border: 1px solid ${colors.mainBorder};
     width: 250px;
     height: 35px;
-    background-color: ${colors.darkTransparent};
+    background-color: ${colors.mainTransparent};
     color: ${colors.inputText};
     text-align: center;
     font-family: inherit;

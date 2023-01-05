@@ -45,7 +45,7 @@ export const Menu = styled.ul`
 
     :hover,
     :focus {
-      color: ${colors.white};
+      color: ${colors.mainTextColor};
     }
 
     a {

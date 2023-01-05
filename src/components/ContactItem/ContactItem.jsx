@@ -3,6 +3,8 @@ import { StyledLI } from './ContactItem.styled';
 import { RxDotsVertical } from 'react-icons/rx';
 import { AdditionalMenu } from 'components/AdditionalMenu/AdditionalMenu';
 import { Btn } from 'utils/commonStyles';
+import { useSelector } from 'react-redux';
+import { selectTheme } from 'redux/selectors';
 
 export const ContactItem = ({
   id,
@@ -12,18 +14,22 @@ export const ContactItem = ({
   changeNumber,
   changeId,
 }) => {
+  const theme = useSelector(selectTheme);
+
   const words = name.split(' ');
   const leters = [];
   words.forEach(word => leters.push(word[0]));
   const fisrtLetters = leters.join('');
 
   const getRandomColor = () => {
+    const opacity = theme === 'dark' ? 0.1 : 0.6;
+
     const randomBetween = (min, max) =>
       min + Math.floor(Math.random() * (max - min + 1));
     const r = randomBetween(0, 255);
     const g = randomBetween(0, 255);
     const b = randomBetween(0, 255);
-    const rgb = `rgba(${r},${g},${b}, 0.1)`;
+    const rgb = `rgba(${r},${g},${b}, ${opacity})`;
 
     return rgb;
   };

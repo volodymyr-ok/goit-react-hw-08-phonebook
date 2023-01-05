@@ -8,13 +8,10 @@ import { Backdrop } from './UserMenuModal.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeTheme } from 'redux/filterSlice';
 import { selectTheme } from 'redux/selectors';
-import { themeChanger } from 'utils/themeChanger';
-import { colors } from 'utils/theme';
 
 export const UserMenuModal = () => {
   const dispatch = useDispatch();
   const currentTheme = useSelector(selectTheme);
-  console.log(currentTheme);
 
   const closeModal = ({ target }) => {
     const userMenuBackdrop = document.querySelector('.user-menu-backdrop');
@@ -35,15 +32,8 @@ export const UserMenuModal = () => {
   const toggleTheme = () => {
     if (currentTheme === 'dark') {
       dispatch(changeTheme('light'));
-      const newColors = themeChanger('light');
-      console.log(newColors);
-      colors = Object.assign({}, colors, newColors);
     } else {
       dispatch(changeTheme('dark'));
-      console.log(themeChanger('dark'));
-      const newColors = themeChanger('dark');
-      console.log(newColors);
-      colors = Object.assign({}, colors, newColors);
     }
   };
 
